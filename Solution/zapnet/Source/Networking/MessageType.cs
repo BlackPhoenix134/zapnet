@@ -1,0 +1,61 @@
+/* 
+ * Copyright © dead.gg <https://dead.gg>
+ * All Rights Reserved
+ * 
+ * Unauthorized copying or distribution of this file
+ * via any medium is strictly prohibited.
+ * 
+ * This code is proprietary and confidential.
+ * 
+ * kurozael <mailto:kurozael@gmail.com>
+ * zaekona <mailto:zaekona@gmail.com>
+ */
+
+namespace zapnet
+{
+    /// <summary>
+    /// Contains internally used message types for interfacing with Lidgren.
+    /// </summary>
+    internal enum MessageType
+    {
+        /// <summary>
+        /// When a player has disconnected.
+        /// </summary>
+        PlayerDisconnected,
+
+        /// <summary>
+        /// When a player has connected.
+        /// </summary>
+        PlayerConnected,
+
+        /// <summary>
+        /// Change whether entities should be received.
+        /// </summary>
+        PreventSpawning,
+
+        /// <summary>
+        /// When initial data is received.
+        /// </summary>
+        InitialData,
+
+        /// <summary>
+        /// When an entity has spawned.
+        /// </summary>
+        SpawnEntity,
+
+        /// <summary>
+        /// When an entity has despawned.
+        /// </summary>
+        DespawnEntity,
+
+        /// <summary>
+        /// When  entities receive a state update.
+        /// </summary>
+        StateUpdate,
+
+        /// <summary>
+        /// When a network event is received.
+        /// </summary>
+        Event
+    }
+}
