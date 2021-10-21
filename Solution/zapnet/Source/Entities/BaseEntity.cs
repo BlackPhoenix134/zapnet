@@ -773,16 +773,18 @@ namespace zapnet
                 var subsystem = subsystems[i];
 
                 if (subsystem != this)
-                {
-                    var subsystemId = _subsystems.Count + 1;
-                    var subsystemType = subsystem.GetType();
-
-                    subsystem.Initialize(this, (ushort)subsystemId);
-
-                    _subsystemMap[subsystemType] = subsystem;
-                    _subsystems.Add(subsystem);
-                }
+                    AddSubsystem(subsystem);
             }
+        }
+
+        public virtual void AddSubsystem(EntitySubsystem subsystem)
+        {
+            var subsystemId = _subsystems.Count + 1;
+            var subsystemType = subsystem.GetType();
+            subsystem.Initialize(this, (ushort)subsystemId);
+
+            _subsystemMap[subsystemType] = subsystem;
+            _subsystems.Add(subsystem);
         }
 
         protected virtual void Start()
