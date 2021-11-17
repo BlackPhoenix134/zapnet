@@ -246,5 +246,10 @@ namespace zapnet
                 return "NULL";
             }
         }
+
+        protected virtual void CallOnValueChanged()
+        {
+            onValueChanged?.Invoke();
+        }
     }
 }
